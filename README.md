@@ -7,7 +7,8 @@ Link to live site!
 - Cat gif
 - option to get new quote
 - select different cat breed
-- 
+- choose topic for zen quote?
+- select type of cat (funny, cute, )
 
 
 
