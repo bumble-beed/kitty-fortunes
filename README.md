@@ -1,21 +1,42 @@
 # kitty-fortunes
 
-User Story
+Link to live site!
 
-Link to Site:
+### Description
 
-General Features: (3 -5 features)
 
- like the cat idea! Claude says there are a couple of cat APIs: https://thecatapi.com/ and https://cataas.com/
 
- Contact Info - Devs
- - Geo geovongriffin
- - Shirleen bumbleebeed
- - Liz Lizjohnson00
- - Natalie futurepraxis
+### General Features: (3 - 5 features)
+- 
+- 
+- 
 
- https://api.thecatapi.com/v1/images/search
+### Tech Stack
+- HTML5
+- CSS3
+- [Bulma](https://bulma.io/)
+- Javascript
+- 
 
- https://v2.jokeapi.dev/joke/Any?safe-mode
+### Screenshots / Demo
 
- 
+![]
+![]
+
+### Core APIs
+[Cat As A Service](https://cataas.com/)
+[Zen Quotes](https://zenquotes.io/)
+
+###  Contact Info - Devs
+ - Geo 
+    - [Github](https://github.com/geovongriffin)
+    - [LinkedIn](https://www.linkedin.com/in/geovongriffin)
+ - Shirleen
+    - [Github](https://github.com/bumbleebeed)
+    - [LinkedIn](https://www.linkedin.com/in/shirleen-asre-0b9b05b/)
+ - Liz
+    - [GitHub](https://github.com/Lizjohnson00)
+    - [LinkedIn](https://www.linkedin.com/in/elizabeth-annang-johnson)
+ - Natalie
+    - [Github](https://github.com/futurepraxis)
+    - [LinkedIn](https://www.linkedin.com/in/natalie-r-b1310726)
