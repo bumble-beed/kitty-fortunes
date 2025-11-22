@@ -28,15 +28,15 @@ Link to live site!
 [Zen Quotes](https://zenquotes.io/)
 
 ###  Contact Info - Devs
- - Geo 
+ - Geo 🙀
     - [Github](https://github.com/geovongriffin)
     - [LinkedIn](https://www.linkedin.com/in/geovongriffin)
- - Shirleen
+ - Shirleen 😼
     - [Github](https://github.com/bumbleebeed)
     - [LinkedIn](https://www.linkedin.com/in/shirleen-asre-0b9b05b/)
- - Liz
+ - Liz 😻
     - [GitHub](https://github.com/Lizjohnson00)
     - [LinkedIn](https://www.linkedin.com/in/elizabeth-annang-johnson)
- - Natalie
+ - Natalie 😹
     - [Github](https://github.com/futurepraxis)
     - [LinkedIn](https://www.linkedin.com/in/natalie-r-b1310726)
