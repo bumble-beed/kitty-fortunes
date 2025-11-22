@@ -14,7 +14,7 @@ General Features: (3 -5 features)
  - Liz Lizjohnson00
  - Natalie futurepraxis
 
- (https://api.thecatapi.com/v1/images/search)
+ https://api.thecatapi.com/v1/images/search
 
  https://v2.jokeapi.dev/joke/Any?safe-mode
 
