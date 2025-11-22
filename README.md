@@ -3,6 +3,11 @@
 Link to live site!
 
 ### Description
+- Zen quote
+- Cat gif
+- option to get new quote
+- select different cat breed
+- 
 
 
 
