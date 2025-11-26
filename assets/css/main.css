@@ -59,9 +59,25 @@ BY: SHIRLEEN, LIZ, NATALIE, AND GEO
   margin: 0 0 0.5rem; 
 }
 
-/* Tagline under the title */
+
 #site-tagline {
   font-size: 1.1rem;
   margin: 0;
   color: #555;
+}
+
+/*  Fortune Form Layout
+   - Stacks all form inputs vertically
+   - Uses flexbox for spacing and clean alignment*/
+#fortune-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+
+#app {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
 }
