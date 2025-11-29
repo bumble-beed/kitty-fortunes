@@ -1,5 +1,6 @@
 //API URLS
 const CAT_URL = 'https://cataas.com';
+const QUOTE_URL = 'https://zenquotes.io/api/quotes/';
 
 //Store inputs
 const fortuneForm = document.getElementById('fortuneForm');
