@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
     <title>Kitty Fortunes 🐾</title>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"> -->
     <link rel="stylesheet" href="./assets/css/main.css" />
 </head>
 
@@ -26,6 +25,8 @@
                 <h2 class="section-title">Start Your Kitty Fortune</h2>
 
                 <form id="fortuneForm">
+                    <!-- I took out the option to select by mood because the Cat API is not super robust and doesn't have enough tagged images to create valid combos. E.g., choosing something like "relaxed" and then "calico" can return a 404 error with the API. It was too hard to manually figure out which were robust combos. Leaving this here in case anyone else better ideas on how to resolve. -NR -->
+
                     <!--Mood Choice-->
                     <!-- <label for="moodDropdown" class="form-label">What mood are you in?</label>
                     <select class="form-select" id="moodDropdown">
