@@ -1,6 +1,6 @@
 //API URLS
 const CAT_URL = 'https://cataas.com';
-const QUOTE_URL = 'https://zenquotes.io/api/quotes/';
+const QUOTE_URL = 'https://api.quotable.io';
 
 //Store inputs
 const fortuneForm = document.getElementById('fortuneForm');
@@ -11,35 +11,61 @@ const generateBtn = document.getElementById('generateBtn');
 const surpriseBtn = document.getElementById('surpriseBtn');
 const catImg = document.getElementById('catImg');
 const errorMessage = document.getElementById('errorMessage');
+const regenerateBtn = document.getElementById('regenerateBtn');
+const favoriteBtn = document.getElementById('favoriteBtn');
 
 //Get values from form
 fortuneForm.addEventListener('submit', (e) => {
     e.preventDefault();
     // mood = moodDropdown.options[moodDropdown.selectedIndex].value;
-    type = typeDropdown.options[typeDropdown.selectedIndex].value;
-    topic = topicDropdown.options[topicDropdown.selectedIndex].value;
-    catQuery(type);
-})
+    catType = typeDropdown.options[typeDropdown.selectedIndex].value;
+    quoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
+    fetchFortuneData(catType, quoteTopic);
+});
 
-async function catQuery(type) {
-    const url = `${CAT_URL}/cat/${type}`;
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Cat response status: ${response.status}`);
-        }
-        updateResults(response.url);
-    } catch (error) {
-        console.error(error.message);
-        displayErrorMessage();
+//regenerate button
+regenerateBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    catType = typeDropdown.options[typeDropdown.selectedIndex].value;
+    quoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
+    fetchFortuneData(catType, quoteTopic);
+});
+
+async function fetchFortuneData(catType, quoteTopic) {
+  
+  const catURL = `${CAT_URL}/cat/${catType}`;
+  const quoteURL = `${QUOTE_URL}/quotes/random?tags=${quoteTopic}`;
+
+  try {
+    const [catResponse, quoteResponse] = await Promise.all([
+      fetch(catURL),
+      fetch(quoteURL),
+    ]);
+
+    if (!catResponse.ok || !quoteResponse.ok) {
+      throw new Error(`response status: ${response.status}`);
     }
+
+    const catData = catResponse.url;
+    const quoteData = await quoteResponse.json();
+
+    updateResults(catData, quoteData);
+
+  } catch (error) {
+    console.error(error);
+    displayErrorMessage();
+  }
 };
 
-function updateResults(url) {
-    errorMessage.classList.toggle('is-hidden');
-    catImg.src = url;
+
+function updateResults(catData, quoteData) {
+    errorMessage.classList.add('is-hidden');
+    document.getElementById('result').classList.remove('is-hidden');
+    catImg.src = catData;
+    document.getElementById('quoteText').innerHTML = quoteData[0].content;
+    document.getElementById('quoteAuthor').innerHTML = quoteData[0].author;
 };
 
 function displayErrorMessage() {
-     errorMessage.classList.toggle('is-hidden');
+     errorMessage.classList.remove('is-hidden');
 }

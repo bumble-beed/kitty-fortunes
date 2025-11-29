@@ -48,7 +48,6 @@
                     <label for="typeDropdown" class="form-label">Choose your cat style</label>
                     <select class="form-select" id="typeDropdown">
                         <option value="" disabled selected>Pick a cat vibe</option>
-                        <option value="nacho">Nacho</option>
                         <option value="cute">Cute</option>
                         <option value="funny">Funny</option>
                         <option value="grumpy">Grumpy</option>
@@ -70,11 +69,11 @@
                     <label for="topicDropdown" class="form-label">What kind of advice?</label>
                     <select class="form-select" id="topicDropdown">
                         <option value="" disabled selected>Select a topic</option>
-                        <option value="career">Career</option>
-                        <option value="love">Love</option>
-                        <option value="family">Family</option>
-                        <option value="friends">Friends</option>
-                        <option value="motivation">Motivation</option>
+                        <option value="Business">Work</option>
+                        <option value="Love">Love</option>
+                        <option value="Friendship">Friendship</option>
+                        <option value="Life">Life</option>
+                        <option value="inspirational">Inspiration</option>
                     </select>
 
                     <!-- Styling for primary (Generate) and secondary (Surprise Me) actions -->
@@ -98,11 +97,16 @@
 
                     <!-- Quote text -->
                     <p id="quoteText">
-                        Your Zen quote will appear here after you generate a fortune.
                     </p>
 
                     <!-- Quote author -->
                     <p id="quoteAuthor"></p>
+                     <button id="regenerateBtn" type="button" class="button is-primary">
+                        Regenerate
+                    </button>
+                    <button id="favoriteBtn" type="button" class="button is-secondary">
+                        Favorite
+                    </button>
                 </article>
             </section>
 
