@@ -67,14 +67,20 @@ BY: SHIRLEEN, LIZ, NATALIE, AND GEO
 }
 
 /*  Fortune Form Layout
-   - Stacks all form inputs vertically
-   - Uses flexbox for spacing and clean alignment*/
+   - Stacks the form inputs vertically*/
 #fortune-form {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
+#header-section {
+    margin-bottom: 3rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
 
 #app {
   max-width: 700px;

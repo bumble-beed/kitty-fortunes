@@ -9,9 +9,9 @@
   </head>
   <body>
     <!--Site Title / Description-->
-    <header id="header-section">
-      <h1 id="site-title">Kitty Fortunes 😺✨</h1>
-      <p id="site-tagline">
+    <header id="headerSection">
+      <h1 id="siteTitle">Kitty Fortunes 😺✨</h1>
+      <p id="siteTagline">
         Discover your future with a purr-fect fortune from our feline friends!
       </p>
     </header>
@@ -19,15 +19,15 @@
     <main>
       <section id="app">
         <!--Section A: Question Form-->
-        <section id="question-section">
-          <h2 class="section-title">Start Your Kitty Fortune</h2>
+        <section id="questionSection">
+          <h2 class="sectionTitle">Start Your Kitty Fortune</h2>
 
-          <form id="fortune-form">
+          <form id="fortuneForm">
             <!--Mood Choice-->
-            <label for="mood-select" class="form-label"
+            <label for="moodSelect" class="formLabel"
               >What mood are you in?</label
             >
-            <select id="mood-select" class="form-select">
+            <select id="moodSelect" class="formSelect">
               <option value="" disabled selected>Select your mood</option>
               <option value="happy">Happy</option>
               <option value="calm">Calm</option>
@@ -37,10 +37,10 @@
             </select>
 
             <!--Question Input-->
-            <label for="cat-type-select" class="form-label"
+            <label for="catTypeSelect" class="formLabel"
               >Choose your cat style</label
             >
-            <select id="cat-type-select" class="form-select">
+            <select id="catTypeSelect" class="formSelect">
               <option value="" disabled selected>Pick a cat vibe</option>
               <option value="cute">Cute</option>
               <option value="funny">Funny</option>
@@ -49,10 +49,10 @@
             </select>
 
             <!-- Advice Topic -->
-            <label for="topic-select" class="form-label"
+            <label for="topicSelect" class="formLabel"
               >What kind of advice?</label
             >
-            <select id="topic-select" class="form-select">
+            <select id="topicSelect" class="formSelect">
               <option value="" disabled selected>Select a topic</option>
               <option value="career">Career</option>
               <option value="love">Love</option>
@@ -62,38 +62,38 @@
             </select>
 
             <!-- Styling for primary (Generate) and secondary (Surprise Me) actions -->
-            <button id="generate-btn" type="submit" class="primary-btn">
+            <button id="generateBtn" type="submit" class="primaryBtn">
               Generate Fortune
             </button>
 
-            <button id="random-btn" type="button" class="secondary-btn">
+            <button id="randomBtn" type="button" class="secondaryBtn">
               Surprise Me
             </button>
           </form>
         </section>
 
         <!-- Section B: Result Display -->
-        <section id="result-section">
-          <h2 class="section-title">Your Kitty Fortune</h2>
+        <section id="resultSection">
+          <h2 class="sectionTitle">Your Kitty Fortune</h2>
 
-          <article id="fortune-card">
+          <article id="fortuneCard">
             <!-- Cat image placeholder -->
-            <img id="cat-gif" src="" alt="Your cat GIF will appear here" />
+            <img id="catGif" src="" alt="Your cat GIF will appear here" />
 
             <!-- Quote text -->
-            <p id="quote-text">
+            <p id="quoteText">
               Your Zen quote will appear here after you generate a fortune.
             </p>
 
             <!-- Quote author -->
-            <p id="quote-author"></p>
+            <p id="quoteAuthor"></p>
           </article>
         </section>
 
         <!--Section C: Favorites-->
-        <section id="favorites-section">
-          <h2 class="section-title">Saved Favorites</h2>
-          <div id="favorites-container"></div>
+        <section id="favoritesSection">
+          <h2 class="sectionTitle">Saved Favorites</h2>
+          <div id="favoritesContainer"></div>
         </section>
       </section>
     </main>
