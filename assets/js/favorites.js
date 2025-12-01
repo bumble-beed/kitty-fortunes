@@ -1,0 +1,36 @@
+//Hooks
+const favoritesSection = document.getElementById('favoritesSection');
+
+//Load favorites from local storage on page load
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.length > 0) {
+        let favorites = {};
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const entryStr = localStorage.getItem(key);
+            favorites[key] = JSON.parse(entryStr);
+        }
+        //sort favorites by date/key
+        const orderedFavorites = Object.keys(favorites)
+            .sort()
+            .reduce((obj, key) => {
+                obj[key] = favorites[key]; // Rebuild the object with sorted keys
+                return obj;
+            }, {});
+        
+        //Sort by reverse order to show latest favorite and render UI
+        Object.entries(orderedFavorites).reverse().forEach(([key, value]) => {
+            const favoriteCard = document.createElement('article');
+            favoriteCard.classList.add('fortuneCard');
+            favoriteCard.innerHTML = `
+            <img src='${orderedFavorites[key].img}'/>
+            <p>${orderedFavorites[key].quoteContent}</p>
+            <p>${orderedFavorites[key].quoteAuthor}</p>
+            `;
+            favoritesSection.appendChild(favoriteCard);
+        });
+
+    } else {
+        favoritesSection.innerHTML = `<p>Sorry, you don't have any favorites yet.</p>`
+    }
+});
