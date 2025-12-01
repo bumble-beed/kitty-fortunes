@@ -10,21 +10,17 @@
 Welcome to Kitty Fortunes, a lighthearted web app created for the purpose of generating cat-friendly inspiration!
 
 ### General Features
-- Robust user selection and customization
+- Easy user selection and customization
    - Our short questionnaire will help us tailor your experience
-      - What mood are you in? (Caas tag)
-      - What kind of cat do you want? (Caas tag)
-      - What kind of advice are you looking for? (Zenquotes tag)
-         - Dropdown: Career, love life, family, friends...
+      - What kind of cat do you want?
+      - What kind of advice are you looking for?
    - Based on your choices, it will generate a matching quote and cat!
-   - You can save it to a favorites list or restart the process to see other combos
-- If you'd rather not go through the prompts, you can pick from a pool of categories instead
+   - You can save it to a favorites list or regenerate for other combos
+- There is a random button as well!
 
-### Extras
-- **Favorites List:** Save your favorite generated fortune cards
-- **Regeneration:** You can create as many pictures and quotes as you'd like! The sky is the limit.
-- **Shareability:** Download your fortune cards to send off easily.
-
+### Stretch Goals
+- **Favorites List:** Save your favorite combinations to a list
+- **Share Button:** Download or send your fortune cards via link to friends & family
 
 ## Technologies Used
 
@@ -35,8 +31,8 @@ Welcome to Kitty Fortunes, a lighthearted web app created for the purpose of gen
 - JavaScript
 
 ### Core APIs
-- [Cat As A Service](https://cataas.com/)
-- [Zen Quotes](https://zenquotes.io/)
+- [Cat As A Service](https://cataas.com/) by Kevin Balicot
+- [Quotable](https://github.com/lukePeavey/quotable) by Luke Peavey
 
 
 ## Contributors
