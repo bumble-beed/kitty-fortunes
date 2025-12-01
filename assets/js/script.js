@@ -35,12 +35,12 @@ regenerateBtn.addEventListener('click', (e) => {
 
 async function fetchFortuneData(catType, quoteTopic) {
   
-  const catURL = `${CAT_URL}/cat/${catType}`;
+  const catDataURL = `${CAT_URL}/cat/${catType}?json=true`;
   const quoteURL = `${QUOTE_URL}/quotes/random?tags=${quoteTopic}`;
 
   try {
     const [catResponse, quoteResponse] = await Promise.all([
-      fetch(catURL),
+      fetch(catDataURL),
       fetch(quoteURL),
     ]);
 
@@ -48,7 +48,8 @@ async function fetchFortuneData(catType, quoteTopic) {
       throw new Error(`response status: ${response.status}`);
     }
 
-    const catData = catResponse.url;
+    // const catData = catResponse.url;
+    const catData = await catResponse.json();
     const quoteData = await quoteResponse.json();
 
     updateResults(catData, quoteData);
@@ -59,11 +60,10 @@ async function fetchFortuneData(catType, quoteTopic) {
   }
 };
 
-
 function updateResults(catData, quoteData) {
     errorMessage.classList.add('is-hidden');
     document.getElementById('resultSection').classList.remove('is-hidden');
-    catImg.src = catData;
+    catImg.src = catData.url;
     quoteText.innerHTML = quoteData[0].content;
     quoteAuthor.innerHTML = quoteData[0].author;
 };
