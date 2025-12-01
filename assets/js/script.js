@@ -10,6 +10,8 @@ const topicDropdown = document.getElementById('topicDropdown');
 const generateBtn = document.getElementById('generateBtn');
 const surpriseBtn = document.getElementById('surpriseBtn');
 const catImg = document.getElementById('catImg');
+const quoteText = document.getElementById('quoteText');
+const quoteAuthor = document.getElementById('quoteAuthor');
 const errorMessage = document.getElementById('errorMessage');
 const regenerateBtn = document.getElementById('regenerateBtn');
 const favoriteBtn = document.getElementById('favoriteBtn');
@@ -62,10 +64,26 @@ function updateResults(catData, quoteData) {
     errorMessage.classList.add('is-hidden');
     document.getElementById('resultSection').classList.remove('is-hidden');
     catImg.src = catData;
-    document.getElementById('quoteText').innerHTML = quoteData[0].content;
-    document.getElementById('quoteAuthor').innerHTML = quoteData[0].author;
+    quoteText.innerHTML = quoteData[0].content;
+    quoteAuthor.innerHTML = quoteData[0].author;
 };
 
 function displayErrorMessage() {
      errorMessage.classList.remove('is-hidden');
-}
+};
+
+favoriteBtn.addEventListener('click', (e) => {
+  e.preventDefault;
+  addToFavorites();
+})
+
+function addToFavorites() {
+  let date = Date.now();
+  let favorite = {
+    img: catImg.src,
+    quoteContent: quoteText.innerHTML,
+    quoteAuthor: quoteAuthor.innerHTML,
+  }; 
+  let favoriteStr = JSON.stringify(favorite); 
+  localStorage.setItem(date, favoriteStr);
+};
