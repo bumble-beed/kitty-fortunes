@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <!-- Header with Bulma Navbar -->
+    <!-- Header with Bulma Navbar -GV -->
     <header>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
@@ -49,6 +49,10 @@
         <!--Section A: Question Form-->
             <section id="questionSection">
                 <h2 class="sectionTitle">Start Your Kitty Fortune</h2>
+
+                <!-- Custom spacer -GV -->
+                <div class="spacer-md"></div>
+                
                 <form id="fortuneForm">
                     <!-- I took out the option to select by mood because the Cat API is not super robust and doesn't have enough tagged images to create valid combos. E.g., choosing something like "relaxed" and then "calico" can return a 404 error with the API. It was too hard to manually figure out which were robust combos. Leaving this here in case anyone else better ideas on how to resolve. -NR -->
 
@@ -68,52 +72,93 @@
                         <option value="tired">Tired</option>
                         <option value="playful">Playful</option>
                     </select> -->
+                    
+                    <!-- Question Input: Recoded into Bulma component -GV -->
+                    <div class="control is-expanded has-text-centered">
+                        <!-- 1st illustration -->
+                        <img src="./assets/images/hero-illustration-p1.svg" class="formImg" />
+                        <!-- 1st form label and title -->
+                        <h3>01.</h3>
+                        <label for="typeDropdown">Choose your cat style!</label>
 
-                    <!--Question Input-->
-                    <label for="typeDropdown" class="form-label">Choose your cat style</label>
-                    <select class="formSelect" id="typeDropdown">
-                        <option value="" disabled selected>Pick a cat vibe</option>
-                        <option value="cute">Cute</option>
-                        <option value="funny">Funny</option>
-                        <option value="grumpy">Grumpy</option>
-                        <option value="sad">Sad</option>
-                        <option value="tabby">Tabby</option>
-                        <option value="calico">Calico</option>
-                        <option value="fluffy">Fluffy</option>
-                        <option value="orange">Orange</option>
-                        <option value="ginger">Ginger</option>
-                        <option value="grumpy">Grumpy</option>
-                        <option value="himalayan">Himalayan</option>
-                        <option value="nyan">Nyan</option>
-                        <option value="persian">Persian</option>
-                        <option value="siamese">Siamese</option>
-                        <option value="spooked">Spooked</option>
-                    </select>
+                        <!-- Custom spacer -GV -->
+                        <div class="spacer-sm"></div>
 
-                    <!-- Advice Topic -->
-                    <label for="topicDropdown" class="form-label">What kind of advice?</label>
-                    <select class="formSelect" id="topicDropdown">
-                        <option value="" disabled selected>Select a topic</option>
-                        <option value="Business">Work</option>
-                        <option value="Love">Love</option>
-                        <option value="Friendship">Friendship</option>
-                        <option value="Life">Life</option>
-                        <option value="inspirational">Inspiration</option>
-                    </select>
+                        <!-- 1st dropdown -->
+                        <div class="select is-fullwidth">
+                            <select class="formSelect" id="typeDropdown">
+                                <option value="" disabled selected>Pick a cat vibe</option>
+                                <option value="cute">Cute</option>
+                                <option value="funny">Funny</option>
+                                <option value="grumpy">Grumpy</option>
+                                <option value="sad">Sad</option>
+                                <option value="tabby">Tabby</option>
+                                <option value="calico">Calico</option>
+                                <option value="fluffy">Fluffy</option>
+                                <option value="orange">Orange</option>
+                                <option value="ginger">Ginger</option>
+                                <option value="grumpy">Grumpy</option>
+                                <option value="himalayan">Himalayan</option>
+                                <option value="nyan">Nyan</option>
+                                <option value="persian">Persian</option>
+                                <option value="siamese">Siamese</option>
+                                <option value="spooked">Spooked</option>
+                            </select>
+                        </div>
+                    </div>
 
-                    <!-- Styling for primary (Generate) and secondary (Surprise Me) actions -->
-                    <button id="generateBtn" type="submit" class="button is-primary">
-                        Generate Fortune
-                    </button>
+                    <!-- Custom spacer -GV -->
+                    <div class="spacer-md"></div>
 
-                    <button id="surpriseBtn" type="button" class="button is-secondary">
-                        Surprise Me
-                    </button>
+                    <!-- Advice Topic Input: Recoded into Bulma component -GV -->
+                    <div class="control is-expanded has-text-centered">
+                        <!-- 2nd illustration -->
+                        <img src="./assets/images/hero-illustration-p2.svg" class="formImg" />
+                        <!-- 2nd form label and title -->
+                        <h3>02.</h3>
+                        <label for="topicDropdown">Pick your type of advice!</label>
+
+                        <!-- Custom spacer -GV -->
+                        <div class="spacer-sm"></div>
+
+                        <!-- 2nd dropdown -->
+                        <div class="select is-fullwidth">
+                            <select class="formSelect" id="topicDropdown">
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="Business">Work</option>
+                                <option value="Love">Love</option>
+                                <option value="Friendship">Friendship</option>
+                                <option value="Life">Life</option>
+                                <option value="inspirational">Inspiration</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Custom spacer -GV -->
+                    <div class="spacer-md"></div>
+
+                    <!-- 3rd illustration -->
+                    <img src="./assets/images/hero-illustration-p3.svg" class="formImg" />
+                    <!-- 3rd form label and title -->
+                    <h3>03.</h3>
+                    <label>Generate your fortune!</label>
+
+                    <!-- Custom spacer -GV -->
+                    <div class="spacer-sm"></div>
+
+                    <!-- Generate and Surprise buttons -->
+                    <div class="btnGroup">
+                        <button id="generateBtn" type="submit" class="button is-primary is-fullwidth">Generate Fortune</button>
+                        <button id="surpriseBtn" type="button" class="button is-secondary is-fullwidth">Surprise Me</button>
+                    </div>
                 </form>
             </section>
-
+            
             <!-- Section B: Result Display -->
             <section class="is-hidden" id="resultSection">
+                <!-- Custom spacer -GV -->
+                <div class="spacer-md"></div>
+
                 <h2 class="sectionTitle">Your Kitty Fortune</h2>
 
                 <article id="fortuneCard">
@@ -121,25 +166,33 @@
                     <img id="catImg" src="" alt="Your cat GIF will appear here" />
 
                     <!-- Quote text -->
-                    <p id="quoteText">
-                    </p>
+                    <p id="quoteText"></p>
 
                     <!-- Quote author -->
                     <p id="quoteAuthor"></p>
-                    <button id="regenerateBtn" type="button" class="button is-primary">
-                        Regenerate
-                    </button>
-                    <button id="favoriteBtn" type="button" class="button is-secondary">
-                        Favorite
-                    </button>
+
+                    <!-- Flex div for action buttons -GV -->
+                    <div class="btnGroup">
+                        <button id="regenerateBtn" type="button" class="button is-fullwidth is-primary">
+                            Regenerate
+                        </button>
+                        <button id="favoriteBtn" type="button" class="button is-fullwidth is-secondary">
+                            Favorite
+                        </button>
+                    </div>
                 </article>
             </section>
 
             <!--Section C: Favorites-->
             <section id="favoritesSection">
+                
+                <!-- Custom spacer -GV -->
+                <div class="spacer-md"></div>
+
                 <h2 class="sectionTitle">Saved Favorites</h2>
                 <div id="favoritesContainer"></div>
             </section>
+
             <!--Section D: Errors-->
             <section class="has-text-danger is-hidden" id="errorMessage">
                 <p>Something went wrong. Please try again.</p>
@@ -147,7 +200,9 @@
       </section>
     </main>
 
-    <footer></footer>
+    <footer>
+        <p>Made with <span style="font-weight: bold; color: var(--red);"><3</span> by SNGL</p>
+    </footer>
     <script src="./assets/js/script.js"></script>
 </body>
 

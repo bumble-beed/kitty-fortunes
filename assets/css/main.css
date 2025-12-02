@@ -76,7 +76,7 @@ main { /* Handles flex as a column */
 #heroSection { /* Hero before app */
   display: block;
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 }
 #heroSection img { /* Hero illustration */
   width: auto;
@@ -103,18 +103,22 @@ main { /* Handles flex as a column */
   padding: 1.5rem;
 }
 .sectionTitle { /* Titles to indicate start of form */
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: var(--title-type-bold);
   text-align: center;
-  margin: 32px 0 16px;
+  margin: 16px 0;
 }
 #fortuneForm { /* Actual form element; stacks inputs vertically */
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  /* gap: 1rem; */
   width: auto;
 }
-.spacer { /* Allows us to control spacing without using gap property */
+.spacer-sm {
+  width: 100%;
+  height: 16px;
+}
+.spacer-md { /* Allows us to control spacing without using gap property */
   width: 100%; 
   height: 48px;
 }
@@ -123,21 +127,17 @@ main { /* Handles flex as a column */
   margin: 0 auto 16px;
   height: 300px;
 }
-.formImgOffset {
-  display: block;
-  margin: 0 24px 0 8px!important;
-  height: 300px;
-}
-label { /* Labels for each dropdown */
+label { /* Labels for each question */
   font-family: var(--title-type-bold);
   font-size: 1.4rem;
+  text-align: center;
 }
-.control h3 { /* Numbers above labels */
-  margin-left: 24px;
+#app h3 { /* Numbers above labels */
   text-align: left;
+  margin-left: 16px!important;
   line-height: 2.5rem;
   font-family: var(--title-type-bold);
-  font-size: 3rem;
+  font-size: 2.6rem;
 }
 #topicDropdown, #typeDropdown { /* Custom dropdown styles */
   color: var(--beige-light);
@@ -146,21 +146,22 @@ label { /* Labels for each dropdown */
 }
 #fortuneCard { /* Where the form results live */
   padding: 24px;
-  border-radius: var(--br-cards);
+  border-radius: var(--border-cards);
   background: var(--beige-light);
 }
 #fortuneCard img { /* Cataas pictures */
   width: 100%;
 }
-#btnGroup { /* Allows flex direction: row on regen and fav buttons  */
+.btnGroup { /* Allows flex direction: row on regen and fav buttons  */
   display: flex;
+  justify-content: center;
   flex-direction: row;
   gap: 8px;
 }
 #quoteText, #quoteAuthor { /* Custom text style to match palette */
   color: var(--black);
 }
-#errorMessage { /* Alignment fix */
+#errorMessage { /* Error alignment fix */
   text-align: center;
 }
 
@@ -169,7 +170,7 @@ footer {
   position: sticky;
   text-align: center;
   padding: 16px;
-}
+} /* Credit link for later */
 footer a {
   color: var(--blue);
   text-decoration: underline;
