@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // === FUNCTIONS
 async function fetchFortuneData(catType, quoteTopic) {
   
-  const catDataURL = `${CAT_URL}/cat/${catType}&json=true`;
+  const catDataURL = `${CAT_URL}/cat/${catType}?json=true`;
   const quoteURL = `${QUOTE_URL}/quotes/random?tags=${quoteTopic}`;
 
   try {
@@ -85,6 +85,7 @@ function updateResults(catData, quoteData) {
     catImg.src = catData.url;
     quoteText.innerHTML = quoteData[0].content;
     quoteAuthor.innerHTML = quoteData[0].author;
+    quoteAuthor.classList.add('has-text-weight-bold');
     console.log(catData);
 };
 

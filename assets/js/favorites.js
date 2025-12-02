@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             favoriteCard.innerHTML = `
             <img class='image is-square mx-auto mb-5' src='${orderedFavorites[key].img}'/>
             <p class="has-text-dark">${orderedFavorites[key].quoteContent}</p>
-            <p class="has-text-dark">${orderedFavorites[key].quoteAuthor}</p>
+            <p class="has-text-weight-bold has-text-dark">${orderedFavorites[key].quoteAuthor}</p>
             `;
             favoritesSection.appendChild(favoriteCard);
         });

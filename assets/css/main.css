@@ -69,12 +69,7 @@ header {
 }
 
 /* Main App */
-main { /* Handles flex as a column */
-  display: flex;
-  flex-direction: column;
-  margin-top: 48px;
-  padding: 0 56px;
-}
+
 #heroSection { /* Hero before app */
   display: block;
   text-align: center;
@@ -99,12 +94,7 @@ main { /* Handles flex as a column */
 
 /* Form */
 /* Container where all results live */
-/* #app { 
-  display: block;
-  max-width: 800px;
-  margin: auto;
-  padding: 1.5rem;
-} */
+
 .sectionTitle { /* Titles to indicate start of form */
   font-size: 1.2rem;
   font-family: var(--title-type-bold);
@@ -151,9 +141,9 @@ label { /* Labels for each question */
   background: var(--beige-light);
 }
 /* Cataas pictures */
-/* .fortuneCard img { 
-  width: 100%;
-} */
+.fortuneCard img { 
+  border-radius: 5px;
+}
 
 .btnGroup { /* Allows flex direction: row on regen and fav buttons  */
   display: flex;
