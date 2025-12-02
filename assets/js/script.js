@@ -89,3 +89,4 @@ function addToFavorites() {
 
 //To-dos (Stretch Goals)
 //figure out a way to apply proper sentence casing to quotes with JS
+//Apply "star" to card after user favorites a fortune
