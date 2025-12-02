@@ -32,6 +32,9 @@ main {
 #siteTitle {
   font-size: 2.5rem; 
   margin: 0 0 0.5rem; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 50px;
+  text-decoration-style: wavy;
 }
 
 #siteTagline {
@@ -66,7 +69,20 @@ section {
 body {
   min-height: 100vh;
   background-image: url("../images/landing-illustration.svg");
-  background-size: cover;
+  background-size: auto;
   background-position: center;
   background-attachment: fixed;
+}
+
+h2 {
+  color: rgb(225, 227, 233);
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 26px;
+
+}
+.form-label {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  color: rgb(225, 230, 220);
 }
