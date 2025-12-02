@@ -86,3 +86,6 @@ function addToFavorites() {
   let favoriteStr = JSON.stringify(favorite); 
   localStorage.setItem(date, favoriteStr);
 };
+
+//To-dos (Stretch Goals)
+//figure out a way to apply proper sentence casing to quotes with JS
