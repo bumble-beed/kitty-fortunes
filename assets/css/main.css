@@ -144,12 +144,12 @@ label { /* Labels for each question */
   border: 2px solid var(--beige-light);
   background: var(--black);
 }
-#fortuneCard { /* Where the form results live */
+.fortuneCard { /* Where the form results live */
   padding: 24px;
   border-radius: var(--border-cards);
   background: var(--beige-light);
 }
-#fortuneCard img { /* Cataas pictures */
+.fortuneCard img { /* Cataas pictures */
   width: 100%;
 }
 .btnGroup { /* Allows flex direction: row on regen and fav buttons  */

@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         //Sort by reverse order to show latest favorite and render UI
         Object.entries(orderedFavorites).reverse().forEach(([key, value]) => {
             const favoriteCard = document.createElement('article');
-            favoriteCard.classList.add('fortuneCard');
+            favoriteCard.classList.add('fortuneCard', 'mb-6');
             favoriteCard.innerHTML = `
             <img src='${orderedFavorites[key].img}'/>
-            <p>${orderedFavorites[key].quoteContent}</p>
-            <p>${orderedFavorites[key].quoteAuthor}</p>
+            <p class="has-text-dark">${orderedFavorites[key].quoteContent}</p>
+            <p class="has-text-dark">${orderedFavorites[key].quoteAuthor}</p>
             `;
             favoritesSection.appendChild(favoriteCard);
         });
