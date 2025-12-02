@@ -34,3 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         favoritesSection.innerHTML = `<p>Sorry, you don't have any favorites yet.</p>`
     }
 });
+
+//Stretch goal: 
+//Add ability to delete individual favorites?
