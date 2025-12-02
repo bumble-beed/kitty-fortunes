@@ -49,11 +49,7 @@
       <section id="app">
         <!--Section A: Question Form-->
             <section id="questionSection">
-                <h2 class="sectionTitle">Start Your Kitty Fortune</h2>
-
-                <!-- Custom spacer -GV -->
-                <div class="spacer-md"></div>
-                
+                <h2 class="sectionTitle mb-6">Start Your Kitty Fortune</h2>
                 <form id="fortuneForm">
                     <!-- I took out the option to select by mood because the Cat API is not super robust and doesn't have enough tagged images to create valid combos. E.g., choosing something like "relaxed" and then "calico" can return a 404 error with the API. It was too hard to manually figure out which were robust combos. Leaving this here in case anyone else better ideas on how to resolve. -NR -->
 
@@ -80,13 +76,10 @@
                         <img src="./assets/images/hero-illustration-p1.svg" class="formImg" />
                         <!-- 1st form label and title -->
                         <h3>01.</h3>
-                        <label for="typeDropdown">Choose your cat style!</label>
-
-                        <!-- Custom spacer -GV -->
-                        <div class="spacer-sm"></div>
+                        <label class="is-block mb-4" for="typeDropdown">Choose your cat style!</label>
 
                         <!-- 1st dropdown -->
-                        <div class="select is-fullwidth">
+                        <div class="select is-fullwidth mb-6">
                             <select class="formSelect" id="typeDropdown">
                                 <option value="" disabled selected>Pick a cat vibe</option>
                                 <option value="cute">Cute</option>
@@ -108,22 +101,16 @@
                         </div>
                     </div>
 
-                    <!-- Custom spacer -GV -->
-                    <div class="spacer-md"></div>
-
                     <!-- Advice Topic Input: Recoded into Bulma component -GV -->
                     <div class="control is-expanded has-text-centered">
                         <!-- 2nd illustration -->
                         <img src="./assets/images/hero-illustration-p2.svg" class="formImg" />
                         <!-- 2nd form label and title -->
                         <h3>02.</h3>
-                        <label for="topicDropdown">Pick your type of advice!</label>
-
-                        <!-- Custom spacer -GV -->
-                        <div class="spacer-sm"></div>
+                        <label class="is-block mb-4" for="topicDropdown">Pick your type of advice!</label>
 
                         <!-- 2nd dropdown -->
-                        <div class="select is-fullwidth">
+                        <div class="select is-fullwidth mb-6">
                             <select class="formSelect" id="topicDropdown">
                                 <option value="" disabled selected>Select a topic</option>
                                 <option value="Business">Work</option>
@@ -135,20 +122,14 @@
                         </div>
                     </div>
 
-                    <!-- Custom spacer -GV -->
-                    <div class="spacer-md"></div>
-
                     <!-- 3rd illustration -->
                     <img src="./assets/images/hero-illustration-p3.svg" class="formImg" />
                     <!-- 3rd form label and title -->
                     <h3>03.</h3>
-                    <label>Generate your fortune!</label>
-
-                    <!-- Custom spacer -GV -->
-                    <div class="spacer-sm"></div>
+                    <label class="is-block mb-4">Generate your fortune!</label>
 
                     <!-- Generate and Surprise buttons -->
-                    <div class="btnGroup">
+                    <div class="btnGroup my-5">
                         <button id="generateBtn" type="submit" class="button is-primary is-fullwidth">Generate Fortune</button>
                         <button id="surpriseBtn" type="button" class="button is-secondary is-fullwidth">Surprise Me</button>
                     </div>
@@ -160,7 +141,7 @@
                 <!-- Custom spacer -GV -->
                 <div class="spacer-md"></div>
 
-                <h2 class="sectionTitle">Your Kitty Fortune</h2>
+                <h2 class="sectionTitle my-5">Your Kitty Fortune</h2>
 
                 <article class="fortuneCard">
                     <!-- Cat image placeholder -->
