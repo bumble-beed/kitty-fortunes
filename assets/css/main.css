@@ -9,80 +9,169 @@ BY: SHIRLEEN, LIZ, NATALIE, AND GEO
 /* All Imports */
 @import "./node_modules/bulma/css/bulma.css";
 
-/* Universal Selector: Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@font-face {
+  font-family: 'Basteleur Moonlight';
+  src: url(../fonts/Basteleur/webfonts/Basteleur-Moonlight.woff);
+}
+@font-face {
+  font-family: 'Basteleur Bold';
+  src: url(../fonts/Basteleur/webfonts/Basteleur-Bold.woff);
+}
+@font-face {
+  font-family: 'Inter Tight';
+  src: url(../fonts/Inter-Tight/InterTight-VariableFont_wght.ttf);
 }
 
-main {
+:root { /* Custom Palette */
+  --black: #292829;
+  --red: #A65A66;
+  --blue: #677B80;
+  --yellow: #C4A44D;
+  --green: #748530;
+  --beige-dark: #BDB099;
+  --beige-light: #D6C0AE;
+  /* Borders */
+  --border-cards: 8px;
+  --border-containers: 16px;
+  /* Fonts */
+  --title-type-bold: 'Basteleur Bold';
+  --title-type-light: 'Basteleur Moonlight';
+  --body-type: 'Inter Tight';
+}
+
+/* Viewport */
+body {
+  width: 100vw;
+  height: fit-content;
+  overflow-x: hidden;
+  color: var(--beige-light);
+  background: var(--black);
+  font-family: var(--body-type);
+  font-weight: 500;
+}
+
+/* Header / Nav Section */
+header {
+  background: var(--beige-light);
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+#navbarBasic {
+  font-family: var(--body-type);
+  font-weight: 600;
+}
+.navbar-brand {
+  font-size: 1rem;
+  font-family: var(--title-type-bold);
+}
+
+/* Main App */
+main { /* Handles flex as a column */
   display: flex;
   flex-direction: column;
+  margin-top: 48px;
+  padding: 0 56px;
 }
-
-/* ===== Header layout fix ===== */
-#headerSection {
+#heroSection { /* Hero before app */
   display: block;
   text-align: center;
-  padding: 2rem 1rem;
+  margin-bottom: 64px;
 }
-
-/* Main title style */
-#siteTitle {
-  font-size: 2.5rem; 
-  margin: 0 0 0.5rem; 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 50px;
-  text-decoration-style: wavy;
+#heroSection img { /* Hero illustration */
+  width: auto;
+  height: 220px;
+  margin: 24px auto;
 }
-
+#heroSection p { /* Welcome to.. */
+  font-size: 1.4rem;
+  font-family: var(--title-type-light);
+}
+#heroSection #siteTitle {
+  font-family: var(--title-type-bold);
+  font-size: 1.6rem;
+}
 #siteTagline {
-  font-size: 1.1rem;
-  margin: 0;
-  color: #555;
+  font-size: 1rem!important;
 }
 
-/*  Fortune Form Layout
-   - Stacks the form inputs vertically*/
-#fortuneForm {
+/* Form */
+#app { /* Container where all results live */
+  display: block;
+  max-width: 800px;
+  margin: auto;
+  padding: 1.5rem;
+}
+.sectionTitle { /* Titles to indicate start of form */
+  font-size: 1rem;
+  font-family: var(--title-type-bold);
+  text-align: center;
+  margin: 32px 0 16px;
+}
+#fortuneForm { /* Actual form element; stacks inputs vertically */
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.5rem;
+  width: auto;
+}
+.spacer { /* Allows us to control spacing without using gap property */
+  width: 100%; 
+  height: 48px;
+}
+.formImg { /* Form illustrations */
+  display: block;
+  margin: 0 auto 16px;
+  height: 300px;
+}
+.formImgOffset {
+  display: block;
+  margin: 0 24px 0 8px!important;
+  height: 300px;
+}
+label { /* Labels for each dropdown */
+  font-family: var(--title-type-bold);
+  font-size: 1.4rem;
+}
+.control h3 { /* Numbers above labels */
+  margin-left: 24px;
+  text-align: left;
+  line-height: 2.5rem;
+  font-family: var(--title-type-bold);
+  font-size: 3rem;
+}
+#topicDropdown, #typeDropdown { /* Custom dropdown styles */
+  color: var(--beige-light);
+  border: 2px solid var(--beige-light);
+  background: var(--black);
+}
+#fortuneCard { /* Where the form results live */
+  padding: 24px;
+  border-radius: var(--br-cards);
+  background: var(--beige-light);
+}
+#fortuneCard img { /* Cataas pictures */
+  width: 100%;
+}
+#btnGroup { /* Allows flex direction: row on regen and fav buttons  */
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+#quoteText, #quoteAuthor { /* Custom text style to match palette */
+  color: var(--black);
+}
+#errorMessage { /* Alignment fix */
+  text-align: center;
 }
 
-#headerSection {
-    margin-bottom: 3rem;
+/* Footer */
+footer {
+  position: sticky;
+  text-align: center;
+  padding: 16px;
 }
-
-section {
-    margin-bottom: 2rem;
-}
-
-#app {
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  padding: 1.5rem;
-  background-color: transparent;
-}
-
-body {
-  min-height: 100vh;
-  background-image: url("../images/landing-illustration.svg");
-  background-size: auto;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-h2 {
-  color: rgb(225, 227, 233);
+footer a {
+  color: var(--blue);
+  text-decoration: underline;
   font-weight: bold;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 26px;
-
-}
-.form-label {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 20px;
-  color: rgb(225, 230, 220);
 }

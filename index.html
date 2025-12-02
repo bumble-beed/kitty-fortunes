@@ -10,15 +10,41 @@
 </head>
 
 <body>
-    <!--Site Title / Description-->
-    <header id="headerSection">
-      <h1 id="siteTitle">✨😺 Kitty Fortunes 😺✨</h1>
-      <p id="siteTagline">
-        Discover your future with a purr-fect fortune from our feline friends!
-      </p>
+    <!-- Header with Bulma Navbar -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">Kitty Fortunes</a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasic" class="navbar-menu">
+                <div class="navbar-start"></div>
+                <div class="navbar-end">
+                    <!-- <a class="navbar-item" href="/">Home</a> -->
+                    <a class="navbar-item" href="https://github.com/bumble-beed/kitty-fortunes/graphs/contributors"
+                        target="_blank">Contributors</a>
+                    <a class="navbar-item" href="https://github.com/bumble-beed/kitty-fortunes"
+                        target="_blank">Repository</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
+        <!-- Hero before app -GV -->
+        <section id="heroSection">
+            <p>Welcome to</p>
+            <img src="./assets/images/landing-illustration.svg">
+            <h2 id="siteTitle">Kitty Fortunes</h2>
+            <p id="siteTagline">Discover your future with a purr-fect fortune from our feline friends!</p>
+        </section>
+
       <section id="app">
         <!--Section A: Question Form-->
             <section id="questionSection">

@@ -1,7 +1,8 @@
-//API URLS
+// === API URLS
 const CAT_URL = 'https://cataas.com';
 const QUOTE_URL = 'https://api.quotable.io';
 
+// === DECLARATIONS
 //Store inputs
 const fortuneForm = document.getElementById('fortuneForm');
 // const moodDropdown = document.getElementById('moodDropdown');
@@ -16,6 +17,7 @@ const errorMessage = document.getElementById('errorMessage');
 const regenerateBtn = document.getElementById('regenerateBtn');
 const favoriteBtn = document.getElementById('favoriteBtn');
 
+// === EVENT LISTENERS
 //Get values from form
 fortuneForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -25,7 +27,7 @@ fortuneForm.addEventListener('submit', (e) => {
     fetchFortuneData(catType, quoteTopic);
 });
 
-//regenerate button
+//Regenerate button
 regenerateBtn.addEventListener('click', (e) => {
     e.preventDefault();
     catType = typeDropdown.options[typeDropdown.selectedIndex].value;
@@ -33,6 +35,24 @@ regenerateBtn.addEventListener('click', (e) => {
     fetchFortuneData(catType, quoteTopic);
 });
 
+//Navbar functionality (Taken from Bulma docs) -GV
+document.addEventListener('DOMContentLoaded', () => {
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+    });
+  });
+});
+
+// === FUNCTIONS
 async function fetchFortuneData(catType, quoteTopic) {
   
   const catDataURL = `${CAT_URL}/cat/${catType}?json=true`;
