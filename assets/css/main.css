@@ -63,7 +63,7 @@ section {
 }
 
 body {
-  background-image: url(https://wall.alphacoders.com/big.php?i=1373567);
+  background-image: url("./images/landing-illustration.svg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
