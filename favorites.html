@@ -11,40 +11,54 @@
 
 <body>
     <!--Site Title / Description-->
-    <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">Kitty Fortunes</a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
-                    <!-- Spans must be present to show hamburger menu on mobile -->
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+    <div class="grid mb-0">
+        <div class="cell">
+            <!-- Header with Bulma Navbar -GV -->
+            <header>
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="/">Kitty Fortunes</a>
+                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                            data-target="navbarBasic">
+                            <!-- Spans must be present to show hamburger menu on mobile -->
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div id="navbarBasic" class="navbar-menu">
+                        <div class="navbar-start"></div>
+                        <div class="navbar-end">
+                            <a class="navbar-item" href="/favorites.html">😻 Favorites</a>
+                            <a class="navbar-item"
+                                href="https://github.com/bumble-beed/kitty-fortunes/graphs/contributors"
+                                target="_blank">👤 Contributors</a>
+                            <a class="navbar-item" href="https://github.com/bumble-beed/kitty-fortunes"
+                                target="_blank">🗃️
+                                Repository</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+    <div class="container is-fluid">
+        <div class="columns">
+            <div class="column">
+                <main>
+                    <div class="columns">
+                        <div class="column is-two-fifths mx-auto fortuneContainer">
+                            <section class="content" id="favoritesSection">
+                                <h2 class="sectionTitle mb-6">Your Favorite Fortunes</h2>
+                            </section>
+                        </div>
+                    </div>
+                </main>
             </div>
-
-            <div id="navbarBasic" class="navbar-menu">
-                <div class="navbar-start"></div>
-                <div class="navbar-end">
-                    <a class="navbar-item" href="/favorites.html">😻 Favorites</a>
-                    <a class="navbar-item" href="https://github.com/bumble-beed/kitty-fortunes/graphs/contributors"
-                        target="_blank">👤 Contributors</a>
-                    <a class="navbar-item" href="https://github.com/bumble-beed/kitty-fortunes"
-                        target="_blank">🗃️ Repository</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-      <section id="app">
-            <section class="content" id="favoritesSection">
-                <h2 class="sectionTitle mb-6">Your Favorite Fortunes</h2>
-            </section>
-
-      </section>
-    </main>
+        </div>
+    </div>
 
     <footer></footer>
     <script src="./assets/js/favorites.js"></script>

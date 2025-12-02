@@ -135,7 +135,7 @@ label { /* Labels for each question */
   font-size: 1.4rem;
   text-align: center;
 }
-.formContainer h3 { /* Numbers above labels */
+.fortuneContainer h3 { /* Numbers above labels */
   /* text-align: left;
   margin-left: 16px!important; */
   line-height: 2.5rem;
