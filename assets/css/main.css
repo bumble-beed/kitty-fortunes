@@ -30,6 +30,8 @@ BY: SHIRLEEN, LIZ, NATALIE, AND GEO
   --green: #748530;
   --beige-dark: #BDB099;
   --beige-light: #D6C0AE;
+  /* Set background color to --black globally */
+  --bulma-body-background-color: var(--black);
   /* Borders */
   --border-cards: 8px;
   --border-containers: 16px;
@@ -149,9 +151,11 @@ label { /* Labels for each question */
   border-radius: var(--border-cards);
   background: var(--beige-light);
 }
-.fortuneCard img { /* Cataas pictures */
+/* Cataas pictures */
+.fortuneCard img { 
   width: 100%;
 }
+
 .btnGroup { /* Allows flex direction: row on regen and fav buttons  */
   display: flex;
   justify-content: center;
