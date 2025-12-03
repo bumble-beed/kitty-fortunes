@@ -5,7 +5,6 @@ const QUOTE_URL = 'https://api.quotable.io';
 // === DECLARATIONS
 //Store inputs
 const fortuneForm = document.getElementById('fortuneForm');
-// const moodDropdown = document.getElementById('moodDropdown');
 const typeDropdown = document.getElementById('typeDropdown');
 const topicDropdown = document.getElementById('topicDropdown');
 const generateBtn = document.getElementById('generateBtn');
@@ -16,24 +15,65 @@ const quoteAuthor = document.getElementById('quoteAuthor');
 const errorMessage = document.getElementById('errorMessage');
 const regenerateBtn = document.getElementById('regenerateBtn');
 const favoriteBtn = document.getElementById('favoriteBtn');
+const favoriteIcon = document.getElementById('favoriteIcon');
+
+const catType = [
+  "cute",
+  "funny",
+  "grumpy",
+  "sad",
+  "tabby",
+  "calico",
+  "fluffy",
+  "orange",
+  "ginger",
+  "himalayan",
+  "nyan",
+  "persian",
+  "siamese",
+  "spooked"
+];
+
+const adviceTopic = [
+  "Business",
+  "Love",
+  "Friendship",
+  "Life",
+  "Inspirational",
+];
 
 // === EVENT LISTENERS
 //Get values from form
 fortuneForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // mood = moodDropdown.options[moodDropdown.selectedIndex].value;
-    catType = typeDropdown.options[typeDropdown.selectedIndex].value;
-    quoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
-    fetchFortuneData(catType, quoteTopic);
+  e.preventDefault();
+  // mood = moodDropdown.options[moodDropdown.selectedIndex].value;
+  catType = typeDropdown.options[typeDropdown.selectedIndex].value;
+  quoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
+  fetchFortuneData(catType, quoteTopic);
 });
 
 //Regenerate button
 regenerateBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    catType = typeDropdown.options[typeDropdown.selectedIndex].value;
-    quoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
-    fetchFortuneData(catType, quoteTopic);
+  e.preventDefault();
+  catType = typeDropdown.options[typeDropdown.selectedIndex].value;
+  quoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
+  fetchFortuneData(catType, quoteTopic);
+  //Hide favorite icon
+  favoriteIcon.classList.add('is-hidden');
 });
+
+//Surprise button
+surpriseBtn.addEventListener('click', (e) => {
+  e.preventDefault;
+  surpriseMe();
+});
+
+//Favorite button
+favoriteBtn.addEventListener('click', (e) => {
+  e.preventDefault;
+  addToFavorites();
+}); 
+
 
 //Navbar functionality (Taken from Bulma docs) -GV
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,6 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // === FUNCTIONS
+
+//Fetch API data
 async function fetchFortuneData(catType, quoteTopic) {
   
   const catDataURL = `${CAT_URL}/cat/${catType}?json=true`;
@@ -79,6 +121,7 @@ async function fetchFortuneData(catType, quoteTopic) {
   }
 };
 
+//Display data on page
 function updateResults(catData, quoteData) {
     errorMessage.classList.add('is-hidden');
     document.getElementById('resultSection').classList.remove('is-hidden');
@@ -89,18 +132,24 @@ function updateResults(catData, quoteData) {
     console.log(catData);
 };
 
+//Show error message if API call fails
 function displayErrorMessage() {
      errorMessage.classList.remove('is-hidden');
 };
 
-favoriteBtn.addEventListener('click', (e) => {
-  e.preventDefault;
-  addToFavorites();
-})
+//Show random selection when user selects "surprise me" button
+function surpriseMe() {
+  //Generate random number based on array length
+  const randomCat = catType[Math.floor(Math.random() * catType.length)];
+  const randomAdvice = adviceTopic[Math.floor(Math.random() * adviceTopic.length)];
+  fetchFortuneData(randomCat, randomAdvice);
+  //Hide favorite icon
+  favoriteIcon.classList.add('is-hidden');
+};
 
+//Add a fortune card to favorites
 function addToFavorites() {
   //Show favorite icon
-  let favoriteIcon = document.getElementById('favoriteIcon');
   favoriteIcon.classList.remove('is-hidden');
   //Create unique identifier for each entry
   let date = Date.now();
