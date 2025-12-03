@@ -23,7 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const favoriteCard = document.createElement('article');
             favoriteCard.classList.add('fortuneCard', 'mb-6');
             favoriteCard.innerHTML = `
-            <img class='image mx-auto mb-5' src='${orderedFavorites[key].img}'/>
+            <figure class="is-relative">
+                <span class="icon is-size-4 has-text-primary-light favoriteIcon" id="favoriteIcon">
+                    <i class="bi bi-bookmark-star-fill"></i>
+                </span>
+                <img class='image mx-auto mb-5' src='${orderedFavorites[key].img}'/>
+            </figure>
             <p class="has-text-dark">${orderedFavorites[key].quoteContent}</p>
             <p class="has-text-weight-bold has-text-dark">${orderedFavorites[key].quoteAuthor}</p>
             `;
