@@ -46,50 +46,33 @@ const adviceTopicArr = [
 //Get values from form
 fortuneForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  // mood = moodDropdown.options[moodDropdown.selectedIndex].value;
-  catType = typeDropdown.options[typeDropdown.selectedIndex].value;
-  quoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
-  fetchFortuneData(catType, quoteTopic);
+  const selectedCatType = typeDropdown.options[typeDropdown.selectedIndex].value;
+  const selectedQuoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
+  fetchFortuneData(selectedCatType, selectedQuoteTopic);
 });
 
 //Regenerate button
 regenerateBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  catType = typeDropdown.options[typeDropdown.selectedIndex].value;
-  quoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
-  fetchFortuneData(catType, quoteTopic);
+  const selectedCatType = typeDropdown.options[typeDropdown.selectedIndex].value;
+  const selectedQuoteTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
+  fetchFortuneData(selectedCatType, selectedQuoteTopic);
   //Hide favorite icon
   favoriteIcon.classList.add('is-hidden');
 });
 
+//a note about the changes to the event listeners: declaring catType again was overwriting the global const (array) you already declared previously, so it threw errors for me when i tested. i just renamed and redeclared them in the listener funcs (both for consistency) to ensure they remained within their scope. -GV
+
 //Surprise button
 surpriseBtn.addEventListener('click', (e) => {
-  e.preventDefault;
+  e.preventDefault(); //the () was missing on this!
   surpriseMe();
 });
 
 //Favorite button
 favoriteBtn.addEventListener('click', (e) => {
-  e.preventDefault;
+  e.preventDefault(); //the () was missing on this!
   addToFavorites();
-}); 
-
-
-//Navbar functionality (Taken from Bulma docs) -GV
-document.addEventListener('DOMContentLoaded', () => {
-  // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  // Add a click event on each of them
-  $navbarBurgers.forEach( el => {
-    el.addEventListener('click', () => {
-      // Get the target from the "data-target" attribute
-      const target = el.dataset.target;
-      const $target = document.getElementById(target);
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      el.classList.toggle('is-active');
-      $target.classList.toggle('is-active');
-    });
-  });
 });
 
 // === FUNCTIONS
@@ -107,7 +90,7 @@ async function fetchFortuneData(catType, quoteTopic) {
     ]);
 
     if (!catResponse.ok || !quoteResponse.ok) {
-      throw new Error(`response status: ${response.status}`);
+      throw new Error(`response status: ${catResponse.status} or ${quoteResponse.status}`); //specified response status from each API
     }
 
     const catData = await catResponse.json();
