@@ -1,9 +1,9 @@
 # Kitty Fortunes
 
-< DEMO GIF / SCREENSHOTS 1 - 3 >
+![Screenshot of Kitty Fortunes homepage](./assets/images/demo-landing.png)
+![Screenshot of our Favorite Fortunes page](./assets/images/demo-favorites.png)
 
-[Visit the live site here.]()
-
+[Visit the live site here.](https://geovongriffin.github.io/kitty-fortunes/)
 
 ## Description
 
@@ -19,7 +19,7 @@ Welcome to Kitty Fortunes, a lighthearted web app created for the purpose of gen
 - There is a random button as well!
 
 ### Stretch Goals
-- **Favorites List:** Save your favorite combinations to a list
+- **Edit Favorites List:** Be able to remove and manage your favorites
 - **Share Button:** Download or send your fortune cards via link to friends & family
 
 ## Technologies Used
@@ -27,24 +27,23 @@ Welcome to Kitty Fortunes, a lighthearted web app created for the purpose of gen
 ### Our Stack
 - HTML5
 - CSS3
-   - [Bulma](https://bulma.io/)
+- [Bulma](https://bulma.io/)
 - JavaScript
 
 ### Core APIs
 - [Cat As A Service](https://cataas.com/) by Kevin Balicot
 - [Quotable](https://github.com/lukePeavey/quotable) by Luke Peavey
 
-
 ## Contributors
- - Geo 🙀
-   - [Github](https://github.com/geovongriffin)
-   - [LinkedIn](https://www.linkedin.com/in/geovongriffin)
- - Shirleen 😼
-    - [Github](https://github.com/bumbleebeed)
-    - [LinkedIn](https://www.linkedin.com/in/shirleen-asre-0b9b05b/)
- - Liz 😻
+ - Liz 😻 HTML, Page Structure
     - [GitHub](https://github.com/Lizjohnson00)
     - [LinkedIn](https://www.linkedin.com/in/elizabeth-annang-johnson)
- - Natalie 😹
+ - Natalie 😹 JavaScript, Bulma Integration
     - [Github](https://github.com/futurepraxis)
     - [LinkedIn](https://www.linkedin.com/in/natalie-r-b1310726)
+- Geo 🙀 UI, CSS
+   - [Github](https://github.com/geovongriffin)
+   - [LinkedIn](https://www.linkedin.com/in/geovongriffin)
+- Shirleen 😼 (Legacy)
+   - [GitHub](https://github.com/bumbleebeed)
+   - [LinkedIn](https://www.linkedin.com/in/shirleen-asre-0b9b05b/)
