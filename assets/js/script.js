@@ -123,13 +123,16 @@ async function fetchFortuneData(catType, quoteTopic) {
 
 //Display data on page
 function updateResults(catData, quoteData) {
-    errorMessage.classList.add('is-hidden');
-    document.getElementById('resultSection').classList.remove('is-hidden');
-    catImg.src = catData.url;
-    quoteText.innerHTML = quoteData[0].content;
-    quoteAuthor.innerHTML = quoteData[0].author;
-    quoteAuthor.classList.add('has-text-weight-bold');
-    console.log(catData);
+  //Hide error message  
+  errorMessage.classList.add('is-hidden');
+  //Hide favorite icon
+  favoriteIcon.classList.add('is-hidden');
+  document.getElementById('resultSection').classList.remove('is-hidden');
+  catImg.src = catData.url;
+  quoteText.innerHTML = quoteData[0].content;
+  quoteAuthor.innerHTML = quoteData[0].author;
+  quoteAuthor.classList.add('has-text-weight-bold');
+  console.log(catData);
 };
 
 //Show error message if API call fails
